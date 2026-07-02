@@ -279,7 +279,7 @@ const { useState, useEffect, useMemo, useRef, useCallback } = React;
 // This avoids blank/missing icons when a network, proxy, or ad-blocker blocks
 // third-party script domains like cdnjs.cloudflare.com. Each entry is
 // ["svg", {attrs}, [["path",{d:...}], ...]] -- the same shape lucide uses.
-const LUCIDE_ICONS = {"ArrowRight":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M5 12h14"}],["path",{"d":"m12 5 7 7-7 7"}]]],"BadgePercent":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"}],["path",{"d":"m15 9-6 6"}],["path",{"d":"M9 9h.01"}],["path",{"d":"M15 15h.01"}]]],"Check":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M20 6 9 17l-5-5"}]]],"CheckCircle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M22 11.08V12a10 10 0 1 1-5.93-9.14"}],["path",{"d":"m9 11 3 3L22 4"}]]],"ChevronLeft":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m15 18-6-6 6-6"}]]],"ClipboardList":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"8","height":"4","x":"8","y":"2","rx":"1","ry":"1"}],["path",{"d":"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"}],["path",{"d":"M12 11h4"}],["path",{"d":"M12 16h4"}],["path",{"d":"M8 11h.01"}],["path",{"d":"M8 16h.01"}]]],"CreditCard":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"20","height":"14","x":"2","y":"5","rx":"2"}],["line",{"x1":"2","x2":"22","y1":"10","y2":"10"}]]],"Eye":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]],"Gem":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M6 3h12l4 6-10 13L2 9Z"}],["path",{"d":"M11 3 8 9l4 13 4-13-3-6"}],["path",{"d":"M2 9h20"}]]],"Gift":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"x":"3","y":"8","width":"18","height":"4","rx":"1"}],["path",{"d":"M12 8v13"}],["path",{"d":"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"}],["path",{"d":"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"}]]],"Home":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"}],["polyline",{"points":"9 22 9 12 15 12 15 22"}]]],"Inbox":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["polyline",{"points":"22 12 16 12 14 15 10 15 8 12 2 12"}],["path",{"d":"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"}]]],"Loader":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12 2v4"}],["path",{"d":"m16.2 7.8 2.9-2.9"}],["path",{"d":"M18 12h4"}],["path",{"d":"m16.2 16.2 2.9 2.9"}],["path",{"d":"M12 18v4"}],["path",{"d":"m4.9 19.1 2.9-2.9"}],["path",{"d":"M2 12h4"}],["path",{"d":"m4.9 4.9 2.9 2.9"}]]],"Lock":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"18","height":"11","x":"3","y":"11","rx":"2","ry":"2"}],["path",{"d":"M7 11V7a5 5 0 0 1 10 0v4"}]]],"LogOut":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"}],["polyline",{"points":"16 17 21 12 16 7"}],["line",{"x1":"21","x2":"9","y1":"12","y2":"12"}]]],"MapPin":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"}],["circle",{"cx":"12","cy":"10","r":"3"}]]],"MessageCircle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"}]]],"MessageSquare":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"}]]],"Package":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m7.5 4.27 9 5.15"}],["path",{"d":"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"}],["path",{"d":"m3.3 7 8.7 5 8.7-5"}],["path",{"d":"M12 22V12"}]]],"PackageX":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"}],["path",{"d":"m7.5 4.27 9 5.15"}],["polyline",{"points":"3.29 7 12 12 20.71 7"}],["line",{"x1":"12","x2":"12","y1":"22","y2":"12"}],["path",{"d":"m17 13 5 5m-5 0 5-5"}]]],"Pencil":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"}],["path",{"d":"m15 5 4 4"}]]],"Phone":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}]]],"Plus":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M5 12h14"}],["path",{"d":"M12 5v14"}]]],"Receipt":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"}],["path",{"d":"M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"}],["path",{"d":"M12 17.5v-11"}]]],"Search":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["circle",{"cx":"11","cy":"11","r":"8"}],["path",{"d":"m21 21-4.3-4.3"}]]],"SearchX":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m13.5 8.5-5 5"}],["path",{"d":"m8.5 8.5 5 5"}],["circle",{"cx":"11","cy":"11","r":"8"}],["path",{"d":"m21 21-4.3-4.3"}]]],"Settings":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]],"ShoppingBag":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"}],["path",{"d":"M3 6h18"}],["path",{"d":"M16 10a4 4 0 0 1-8 0"}]]],"Sparkle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}]]],"Sparkles":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}],["path",{"d":"M20 3v4"}],["path",{"d":"M22 5h-4"}],["path",{"d":"M4 17v2"}],["path",{"d":"M5 18H3"}]]],"Store":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"}],["path",{"d":"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"}],["path",{"d":"M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"}],["path",{"d":"M2 7h20"}],["path",{"d":"M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"}]]],"Tag":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"}],["circle",{"cx":"7.5","cy":"7.5","r":".5","fill":"currentColor"}]]],"Trash2":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M3 6h18"}],["path",{"d":"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"}],["path",{"d":"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"}],["line",{"x1":"10","x2":"10","y1":"11","y2":"17"}],["line",{"x1":"14","x2":"14","y1":"11","y2":"17"}]]],"Truck":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"}],["path",{"d":"M15 18H9"}],["path",{"d":"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"}],["circle",{"cx":"17","cy":"18","r":"2"}],["circle",{"cx":"7","cy":"18","r":"2"}]]],"X":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M18 6 6 18"}],["path",{"d":"m6 6 12 12"}]]]};
+const LUCIDE_ICONS = {"ArrowRight":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M5 12h14"}],["path",{"d":"m12 5 7 7-7 7"}]]],"BadgePercent":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"}],["path",{"d":"m15 9-6 6"}],["path",{"d":"M9 9h.01"}],["path",{"d":"M15 15h.01"}]]],"CheckCircle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M22 11.08V12a10 10 0 1 1-5.93-9.14"}],["path",{"d":"m9 11 3 3L22 4"}]]],"ChevronLeft":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m15 18-6-6 6-6"}]]],"ClipboardList":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"8","height":"4","x":"8","y":"2","rx":"1","ry":"1"}],["path",{"d":"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"}],["path",{"d":"M12 11h4"}],["path",{"d":"M12 16h4"}],["path",{"d":"M8 11h.01"}],["path",{"d":"M8 16h.01"}]]],"CreditCard":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"20","height":"14","x":"2","y":"5","rx":"2"}],["line",{"x1":"2","x2":"22","y1":"10","y2":"10"}]]],"Eye":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]],"Gem":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M6 3h12l4 6-10 13L2 9Z"}],["path",{"d":"M11 3 8 9l4 13 4-13-3-6"}],["path",{"d":"M2 9h20"}]]],"Gift":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"x":"3","y":"8","width":"18","height":"4","rx":"1"}],["path",{"d":"M12 8v13"}],["path",{"d":"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"}],["path",{"d":"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"}]]],"Home":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"}],["polyline",{"points":"9 22 9 12 15 12 15 22"}]]],"Inbox":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["polyline",{"points":"22 12 16 12 14 15 10 15 8 12 2 12"}],["path",{"d":"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"}]]],"Loader":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12 2v4"}],["path",{"d":"m16.2 7.8 2.9-2.9"}],["path",{"d":"M18 12h4"}],["path",{"d":"m16.2 16.2 2.9 2.9"}],["path",{"d":"M12 18v4"}],["path",{"d":"m4.9 19.1 2.9-2.9"}],["path",{"d":"M2 12h4"}],["path",{"d":"m4.9 4.9 2.9 2.9"}]]],"Lock":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["rect",{"width":"18","height":"11","x":"3","y":"11","rx":"2","ry":"2"}],["path",{"d":"M7 11V7a5 5 0 0 1 10 0v4"}]]],"LogOut":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"}],["polyline",{"points":"16 17 21 12 16 7"}],["line",{"x1":"21","x2":"9","y1":"12","y2":"12"}]]],"MapPin":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"}],["circle",{"cx":"12","cy":"10","r":"3"}]]],"MessageCircle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M7.9 20A9 9 0 1 0 4 16.1L2 22Z"}]]],"MessageSquare":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"}]]],"Package":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m7.5 4.27 9 5.15"}],["path",{"d":"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"}],["path",{"d":"m3.3 7 8.7 5 8.7-5"}],["path",{"d":"M12 22V12"}]]],"PackageX":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"}],["path",{"d":"m7.5 4.27 9 5.15"}],["polyline",{"points":"3.29 7 12 12 20.71 7"}],["line",{"x1":"12","x2":"12","y1":"22","y2":"12"}],["path",{"d":"m17 13 5 5m-5 0 5-5"}]]],"Pencil":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"}],["path",{"d":"m15 5 4 4"}]]],"Phone":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"}]]],"Plus":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M5 12h14"}],["path",{"d":"M12 5v14"}]]],"Search":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["circle",{"cx":"11","cy":"11","r":"8"}],["path",{"d":"m21 21-4.3-4.3"}]]],"SearchX":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m13.5 8.5-5 5"}],["path",{"d":"m8.5 8.5 5 5"}],["circle",{"cx":"11","cy":"11","r":"8"}],["path",{"d":"m21 21-4.3-4.3"}]]],"Settings":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]],"ShoppingBag":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"}],["path",{"d":"M3 6h18"}],["path",{"d":"M16 10a4 4 0 0 1-8 0"}]]],"Sparkle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}]]],"Sparkles":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"}],["path",{"d":"M20 3v4"}],["path",{"d":"M22 5h-4"}],["path",{"d":"M4 17v2"}],["path",{"d":"M5 18H3"}]]],"Store":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"}],["path",{"d":"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"}],["path",{"d":"M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"}],["path",{"d":"M2 7h20"}],["path",{"d":"M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"}]]],"Tag":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"}],["circle",{"cx":"7.5","cy":"7.5","r":".5","fill":"currentColor"}]]],"Trash2":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M3 6h18"}],["path",{"d":"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"}],["path",{"d":"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"}],["line",{"x1":"10","x2":"10","y1":"11","y2":"17"}],["line",{"x1":"14","x2":"14","y1":"11","y2":"17"}]]],"Truck":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"}],["path",{"d":"M15 18H9"}],["path",{"d":"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"}],["circle",{"cx":"17","cy":"18","r":"2"}],["circle",{"cx":"7","cy":"18","r":"2"}]]],"X":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M18 6 6 18"}],["path",{"d":"m6 6 12 12"}]]],"XCircle":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["circle",{"cx":"12","cy":"12","r":"10"}],["path",{"d":"m15 9-6 6"}],["path",{"d":"m9 9 6 6"}]]],"Zap":["svg",{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":2,"stroke-linecap":"round","stroke-linejoin":"round"},[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"}]]]};
 
 /* ============ CONSTANTS ============ */
 const WHATSAPP_NUMBER = "201149483658"; // 01149483658 with Egypt country code for wa.me links
@@ -330,22 +330,65 @@ const DEFAULT_PRODUCTS = [
   { id: uid(), name:"كولية اسم مخصص", category:"necklace", price:200, oldPrice:null, stock:12, isNew:false, isOffer:false, desc:"كولية ذهبية بتصميم اسم مفرد أنيق، هدية مميزة لأي مناسبة.", colors:["ذهبي","فضي وردي"], image:"https://images.unsplash.com/photo-1599459183200-59c7687a0275?w=600&q=80" },
 ];
 
-/* ============ STORAGE HELPERS ============ */
+/* ============ STORAGE HELPERS (Supabase) ============ */
+// This site stores its data (products, orders, settings) in a Supabase project
+// instead of relying on any Claude.ai-only storage API, so the live, hosted
+// version of this site works from any browser, anywhere, for real customers.
+//
+// SETUP REQUIRED — replace these two values with your own Supabase project's
+// credentials before publishing (see the setup guide provided alongside this
+// file). Until you do, the site will show a clear on-screen setup notice
+// instead of silently failing.
+const SUPABASE_URL = "https://ldpsqpzqvxodwrhmkiri.supabase.co"; // e.g. "https://abcdefgh.supabase.co"
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY"; // the "anon" public API key
+
+const SUPABASE_CONFIGURED = SUPABASE_URL !== "https://ldpsqpzqvxodwrhmkiri.supabase.co" && SUPABASE_ANON_KEY !== "sb_publishable_oGJXXD3IlbDCtgGmOBUd9A_w-mfOMpZ";
+
+const SUPABASE_TABLE = "sofia_store_data";
+const SUPABASE_REST_URL = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`;
+
+function supabaseHeaders(extra){
+  return {
+    "apikey": SUPABASE_ANON_KEY,
+    "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+    "Content-Type": "application/json",
+    ...extra
+  };
+}
+
 async function loadShared(key, fallback){
+  if(!SUPABASE_CONFIGURED) return fallback;
   try{
-    const res = await window.storage.get(key, true);
-    if(res && res.value) return JSON.parse(res.value);
+    const url = `${SUPABASE_REST_URL}?key=eq.${encodeURIComponent(key)}&select=value`;
+    const res = await fetch(url, { headers: supabaseHeaders() });
+    if(!res.ok) return fallback;
+    const rows = await res.json();
+    if(rows && rows.length > 0 && rows[0].value !== undefined && rows[0].value !== null){
+      return rows[0].value;
+    }
     return fallback;
   }catch(e){
+    console.error("Supabase load failed", key, e);
     return fallback;
   }
 }
+
 async function saveShared(key, value){
+  if(!SUPABASE_CONFIGURED) return false;
   try{
-    await window.storage.set(key, JSON.stringify(value), true);
+    const res = await fetch(SUPABASE_REST_URL, {
+      method: "POST",
+      headers: supabaseHeaders({ "Prefer": "resolution=merge-duplicates" }),
+      body: JSON.stringify([{ key, value }])
+    });
+    if(!res.ok){
+      const errText = await res.text().catch(()=>"");
+      console.error("Supabase save failed", key, res.status, errText);
+      return false;
+    }
     return true;
   }catch(e){
-    console.error("storage set failed", key, e);
+    console.error("Supabase save failed", key, e);
     return false;
   }
 }
@@ -423,6 +466,19 @@ function useLucideRefresh(deps){
 }
 
 /* ============ MAIN APP ============ */
+function SetupNotice(){
+  if(SUPABASE_CONFIGURED) return null;
+  return (
+    <div style={{
+      position:'fixed', top:0, left:0, right:0, zIndex:200,
+      background:'#FFF4E5', borderBottom:'2px solid #F0B852', padding:'12px 20px',
+      textAlign:'center', fontSize:14, color:'#8a5a12', fontWeight:600
+    }}>
+      ⚠️ الموقع لسه مش متوصل بقاعدة البيانات (Supabase) — الطلبات والمنتجات لن تُحفظ حتى تضيفي بيانات الاتصال في الكود. راجعي ملف شرح الإعداد المرفق.
+    </div>
+  );
+}
+
 function App(){
   const [view, setView] = useState('store'); // store | admin
   const [adminAuthed, setAdminAuthed] = useState(false);
@@ -431,12 +487,15 @@ function App(){
 
   return (
     <div>
-      {view === 'store' && <StoreApp goAdmin={()=> setView('admin')} />}
-      {view === 'admin' && (
-        adminAuthed
-          ? <AdminApp goStore={()=> { setView('store'); }} logout={()=> setAdminAuthed(false)} />
-          : <AdminLogin onSuccess={()=> setAdminAuthed(true)} goStore={()=> setView('store')} />
-      )}
+      <SetupNotice />
+      <div style={{paddingTop: SUPABASE_CONFIGURED ? 0 : 44}}>
+        {view === 'store' && <StoreApp goAdmin={()=> setView('admin')} />}
+        {view === 'admin' && (
+          adminAuthed
+            ? <AdminApp goStore={()=> { setView('store'); }} logout={()=> setAdminAuthed(false)} />
+            : <AdminLogin onSuccess={()=> setAdminAuthed(true)} goStore={()=> setView('store')} />
+        )}
+      </div>
     </div>
   );
 }
@@ -489,17 +548,15 @@ function AdminLogin({onSuccess, goStore}){
    ========================================================================================= */
 function StoreApp({goAdmin}){
   const [products, setProducts] = useState(null); // null = loading
-  const [cart, setCart] = useState([]); // [{id, qty}]
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [filterOffersOnly, setFilterOffersOnly] = useState(false);
   const [sortBy, setSortBy] = useState("featured");
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [orderProduct, setOrderProduct] = useState(null); // product currently being ordered via Easy Order
   const [toast, showToast] = useToast();
 
-  useLucideRefresh([products, cart, search, activeCategory, drawerOpen, quickViewProduct, checkoutOpen, filterOffersOnly, sortBy]);
+  useLucideRefresh([products, search, activeCategory, quickViewProduct, orderProduct, filterOffersOnly, sortBy]);
 
   useEffect(()=>{
     (async ()=>{
@@ -512,40 +569,6 @@ function StoreApp({goAdmin}){
       }
     })();
   }, []);
-
-  const addToCart = (productId, qty=1)=>{
-    setCart(prev=>{
-      const existing = prev.find(c=>c.id===productId);
-      if(existing){
-        return prev.map(c=> c.id===productId ? {...c, qty:c.qty+qty} : c);
-      }
-      return [...prev, {id:productId, qty}];
-    });
-    showToast("تمت الإضافة للسلة", "cart");
-  };
-
-  const updateQty = (productId, qty)=>{
-    if(qty <= 0){
-      setCart(prev=> prev.filter(c=>c.id!==productId));
-      return;
-    }
-    setCart(prev=> prev.map(c=> c.id===productId ? {...c, qty} : c));
-  };
-
-  const removeFromCart = (productId)=>{
-    setCart(prev=> prev.filter(c=>c.id!==productId));
-  };
-
-  const cartDetailed = useMemo(()=>{
-    if(!products) return [];
-    return cart.map(c=>{
-      const p = products.find(pr=>pr.id===c.id);
-      return p ? {...p, qty:c.qty} : null;
-    }).filter(Boolean);
-  }, [cart, products]);
-
-  const cartTotal = useMemo(()=> cartDetailed.reduce((sum,p)=> sum + p.price*p.qty, 0), [cartDetailed]);
-  const cartCount = useMemo(()=> cart.reduce((s,c)=>s+c.qty,0), [cart]);
 
   const filteredProducts = useMemo(()=>{
     if(!products) return [];
@@ -567,8 +590,6 @@ function StoreApp({goAdmin}){
   return (
     <div style={{minHeight:'100vh', display:'flex', flexDirection:'column'}}>
       <StoreHeader
-        cartCount={cartCount}
-        onCartClick={()=> setDrawerOpen(true)}
         search={search}
         setSearch={setSearch}
         goAdmin={goAdmin}
@@ -601,7 +622,7 @@ function StoreApp({goAdmin}){
         ) : (
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(230px,1fr))', gap:24}}>
             {filteredProducts.map(p=> (
-              <ProductCard key={p.id} product={p} onAdd={()=>addToCart(p.id)} onView={()=>setQuickViewProduct(p)} />
+              <ProductCard key={p.id} product={p} onOrder={()=>setOrderProduct(p)} onView={()=>setQuickViewProduct(p)} />
             ))}
           </div>
         )}
@@ -614,38 +635,25 @@ function StoreApp({goAdmin}){
         <span>تواصل واتساب</span>
       </a>
 
-      {drawerOpen && (
-        <CartDrawer
-          items={cartDetailed}
-          onClose={()=>setDrawerOpen(false)}
-          updateQty={updateQty}
-          removeFromCart={removeFromCart}
-          total={cartTotal}
-          onCheckout={()=>{ setDrawerOpen(false); setCheckoutOpen(true); }}
-        />
-      )}
-
       {quickViewProduct && (
         <QuickViewModal
           product={quickViewProduct}
           onClose={()=>setQuickViewProduct(null)}
-          onAdd={(qty)=>{ addToCart(quickViewProduct.id, qty); setQuickViewProduct(null); }}
+          onOrder={(qty)=>{ setOrderProduct({...quickViewProduct, _qty: qty}); setQuickViewProduct(null); }}
         />
       )}
 
-      {checkoutOpen && (
-        <CheckoutModal
-          items={cartDetailed}
-          total={cartTotal}
-          onClose={()=>setCheckoutOpen(false)}
+      {orderProduct && (
+        <EasyOrderModal
+          product={orderProduct}
+          onClose={()=>setOrderProduct(null)}
           onSuccess={()=>{
             // Deferred to the next tick: calling these synchronously right after an
             // awaited async operation can race with React's commit phase while this
             // modal (and its children) are being unmounted, causing DOM reconciliation
             // errors. Deferring lets the current commit finish cleanly first.
             setTimeout(()=>{
-              setCheckoutOpen(false);
-              setCart([]);
+              setOrderProduct(null);
               showToast("تم استلام طلبك بنجاح! سنتواصل معك قريباً", "check");
             }, 0);
           }}
@@ -657,7 +665,7 @@ function StoreApp({goAdmin}){
   );
 }
 
-function StoreHeader({cartCount, onCartClick, search, setSearch, goAdmin}){
+function StoreHeader({search, setSearch, goAdmin}){
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   return (
     <header style={{
@@ -691,12 +699,6 @@ function StoreHeader({cartCount, onCartClick, search, setSearch, goAdmin}){
         <div style={{display:'flex', alignItems:'center', gap:10, marginRight:'auto'}}>
           <button onClick={()=>setMobileSearchOpen(s=>!s)} style={{background:'none', border:'none', padding:8, alignItems:'center'}} className="mobile-search-btn" aria-label="بحث">
             <Icon name="search" size={20} style={{color:'var(--plum)'}} />
-          </button>
-          <button onClick={onCartClick} style={{position:'relative', background:'var(--rose-soft)', border:'none', width:44, height:44, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}} aria-label="سلة المشتريات">
-            <Icon name="shopping-bag" size={20} style={{color:'var(--plum-deep)'}} />
-            {cartCount > 0 && (
-              <span style={{position:'absolute', top:-4, left:-4, background:'var(--plum)', color:'#fff', fontSize:11, fontWeight:700, width:20, height:20, borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}>{cartCount}</span>
-            )}
           </button>
         </div>
       </div>
@@ -797,7 +799,7 @@ function CategoryFilterBar({activeCategory, setActiveCategory, filterOffersOnly,
   );
 }
 
-function ProductCard({product, onAdd, onView}){
+function ProductCard({product, onOrder, onView}){
   return (
     <div className="jewel-card">
       <div className="lid">
@@ -819,8 +821,8 @@ function ProductCard({product, onAdd, onView}){
         </div>
       </div>
       <div style={{padding:'8px 16px 16px', display:'flex', gap:8}}>
-        <button onClick={onAdd} className="btn-primary" style={{flex:1, padding:'10px 14px', fontSize:14, display:'flex', alignItems:'center', justifyContent:'center', gap:6}} disabled={product.stock<=0}>
-          <Icon name="shopping-bag" size={15} /> {product.stock<=0 ? 'نفذت الكمية' : 'أضيفي للسلة'}
+        <button onClick={onOrder} className="btn-primary" style={{flex:1, padding:'10px 14px', fontSize:14, display:'flex', alignItems:'center', justifyContent:'center', gap:6}} disabled={product.stock<=0}>
+          <Icon name="zap" size={15} /> {product.stock<=0 ? 'نفذت الكمية' : 'اطلبي الآن'}
         </button>
         <button onClick={onView} aria-label="عرض سريع" style={{width:42, borderRadius:30, border:'1.5px solid var(--rose-soft)', background:'#fff', display:'flex', alignItems:'center', justifyContent:'center'}}>
           <Icon name="eye" size={16} style={{color:'var(--plum)'}} />
@@ -830,7 +832,7 @@ function ProductCard({product, onAdd, onView}){
   );
 }
 
-function QuickViewModal({product, onClose, onAdd}){
+function QuickViewModal({product, onClose, onOrder}){
   const [qty, setQty] = useState(1);
   const [color, setColor] = useState(product.colors?.[0] || null);
   useLucideRefresh([qty, color]);
@@ -869,8 +871,8 @@ function QuickViewModal({product, onClose, onAdd}){
               <span style={{width:30, textAlign:'center', fontWeight:700}}>{qty}</span>
               <button onClick={()=>setQty(q=>q+1)} style={{width:36, height:36, background:'none', border:'none', fontSize:18}}>+</button>
             </div>
-            <button onClick={()=>onAdd(qty)} className="btn-primary" style={{flex:1, display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
-              <Icon name="shopping-bag" size={16} /> أضيفي للسلة
+            <button onClick={()=>onOrder(qty)} className="btn-primary" style={{flex:1, display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
+              <Icon name="zap" size={16} /> اطلبي الآن
             </button>
           </div>
           <div style={{marginTop:14, fontSize:13, color: product.stock>0 ? 'var(--success)' : '#B53A3A', fontWeight:600, display:'flex', alignItems:'center', gap:6}}>
@@ -883,62 +885,14 @@ function QuickViewModal({product, onClose, onAdd}){
   );
 }
 
-function CartDrawer({items, onClose, updateQty, removeFromCart, total, onCheckout}){
-  return (
-    <React.Fragment>
-      <div className="drawer-overlay" onClick={onClose}></div>
-      <div className="drawer">
-        <div style={{padding:'20px 22px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid var(--cream-2)'}}>
-          <h2 className="font-display" style={{fontSize:20, margin:0}}>سلة المشتريات</h2>
-          <button onClick={onClose} style={{background:'none', border:'none'}} aria-label="إغلاق السلة"><Icon name="x" size={22} /></button>
-        </div>
-        <div style={{flex:1, overflowY:'auto', padding:'10px 22px'}}>
-          {items.length === 0 ? (
-            <div style={{textAlign:'center', padding:'60px 10px'}}>
-              <Icon name="shopping-bag" size={48} style={{color:'var(--rose)'}} />
-              <p style={{color:'var(--ink-soft)', marginTop:14}}>السلة فاضية لسه</p>
-            </div>
-          ) : items.map(item=> (
-            <div key={item.id} style={{display:'flex', gap:12, padding:'14px 0', borderBottom:'1px solid var(--cream-2)'}}>
-              <img src={item.image} alt={item.name} style={{width:64, height:64, borderRadius:12, objectFit:'cover'}} />
-              <div style={{flex:1}}>
-                <div style={{fontWeight:700, fontSize:14}}>{item.name}</div>
-                <div style={{fontSize:13, color:'var(--plum)', fontWeight:700, marginTop:2}}>{item.price} ج.م</div>
-                <div style={{display:'flex', alignItems:'center', gap:10, marginTop:8}}>
-                  <div style={{display:'flex', alignItems:'center', border:'1px solid var(--cream-2)', borderRadius:20}}>
-                    <button onClick={()=>updateQty(item.id, item.qty-1)} style={{width:26, height:26, background:'none', border:'none'}}>−</button>
-                    <span style={{width:24, textAlign:'center', fontSize:13}}>{item.qty}</span>
-                    <button onClick={()=>updateQty(item.id, item.qty+1)} style={{width:26, height:26, background:'none', border:'none'}}>+</button>
-                  </div>
-                  <button onClick={()=>removeFromCart(item.id)} style={{background:'none', border:'none', color:'#B53A3A', fontSize:12, display:'flex', alignItems:'center', gap:4}}>
-                    <Icon name="trash-2" size={13} /> حذف
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        {items.length>0 && (
-          <div style={{padding:'18px 22px', borderTop:'1px solid var(--cream-2)'}}>
-            <div style={{display:'flex', justifyContent:'space-between', fontSize:15, fontWeight:700, marginBottom:14}}>
-              <span>الإجمالي</span>
-              <span style={{color:'var(--plum)'}}>{total} ج.م</span>
-            </div>
-            <button onClick={onCheckout} className="btn-primary" style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', gap:8}}>
-              <Icon name="receipt" size={17} /> إتمام الحجز
-            </button>
-          </div>
-        )}
-      </div>
-    </React.Fragment>
-  );
-}
-
-function CheckoutModal({items, total, onClose, onSuccess}){
-  const [form, setForm] = useState({ name:"", phone:"", address:"", city:"", payment:"cod", packaging:"normal", notes:"" });
+function EasyOrderModal({product, onClose, onSuccess}){
+  const qty = product._qty || 1;
+  const total = product.price * qty;
+  const [form, setForm] = useState({ name:"", phone:"", address:"", payment:"cod", notes:"" });
+  const [showNotes, setShowNotes] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
-  useLucideRefresh([form]);
+  useLucideRefresh([form, showNotes]);
 
   const update = (field, value)=> setForm(f=>({...f, [field]: value}));
 
@@ -947,7 +901,6 @@ function CheckoutModal({items, total, onClose, onSuccess}){
     if(!form.name.trim()) e.name = "من فضلك اكتبي اسمك";
     if(!form.phone.trim() || !/^[0-9+\s]{8,15}$/.test(form.phone.trim())) e.phone = "رقم تليفون غير صحيح";
     if(!form.address.trim()) e.address = "من فضلك اكتبي عنوانك بالتفصيل";
-    if(!form.city.trim()) e.city = "من فضلك اكتبي المحافظة";
     return e;
   };
 
@@ -961,11 +914,11 @@ function CheckoutModal({items, total, onClose, onSuccess}){
       const order = {
         id: uid(),
         createdAt: new Date().toISOString(),
-        customer: { name: form.name.trim(), phone: form.phone.trim(), address: form.address.trim(), city: form.city.trim() },
+        customer: { name: form.name.trim(), phone: form.phone.trim(), address: form.address.trim(), city: "" },
         payment: form.payment,
-        packaging: form.packaging,
+        packaging: "normal",
         notes: form.notes.trim(),
-        items: items.map(it=>({ id: it.id, name: it.name, price: it.price, qty: it.qty })),
+        items: [{ id: product.id, name: product.name, price: product.price, qty }],
         total,
         status: "new"
       };
@@ -979,78 +932,64 @@ function CheckoutModal({items, total, onClose, onSuccess}){
       onSuccess();
       return;
     }catch(err){
-      setErrors({general: "حصل خطأ في حفظ الطلب، جربي تاني"});
+      setErrors({general: SUPABASE_CONFIGURED
+        ? "حصل خطأ في حفظ الطلب، جربي تاني"
+        : "الموقع لسه مش متوصل بقاعدة البيانات. لو إنتِ صاحبة المتجر، راجعي ملف شرح الإعداد."});
       setSubmitting(false);
     }
   };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-box" onClick={e=>e.stopPropagation()} style={{maxWidth:520}}>
-        <div style={{padding:'22px 24px 0', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-          <h2 className="font-display" style={{fontSize:21, margin:0}}>بيانات الحجز</h2>
+      <div className="modal-box" onClick={e=>e.stopPropagation()} style={{maxWidth:460}}>
+        <div style={{padding:'22px 24px 0', display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+          <div style={{display:'flex', alignItems:'center', gap:8}}>
+            <span style={{background:'var(--gold-soft)', color:'#8a6d2f', fontSize:11, fontWeight:800, padding:'4px 10px', borderRadius:20, display:'inline-flex', alignItems:'center', gap:4}}>
+              <Icon name="zap" size={12} /> اطلب سريع
+            </span>
+          </div>
           <button onClick={onClose} style={{background:'none', border:'none'}} aria-label="إغلاق"><Icon name="x" size={20} /></button>
         </div>
-        <form onSubmit={submit} style={{padding:'14px 24px 24px'}}>
-          <div style={{background:'var(--cream)', borderRadius:14, padding:14, marginBottom:18}}>
-            {items.map(it=> (
-              <div key={it.id} style={{display:'flex', justifyContent:'space-between', fontSize:13, marginBottom:6}}>
-                <span>{it.name} × {it.qty}</span>
-                <span style={{fontWeight:700}}>{it.price*it.qty} ج.م</span>
-              </div>
-            ))}
-            <div className="ribbon-divider" style={{margin:'8px 0'}}></div>
-            <div style={{display:'flex', justifyContent:'space-between', fontWeight:800, color:'var(--plum)'}}>
-              <span>الإجمالي</span><span>{total} ج.م</span>
+        <form onSubmit={submit} style={{padding:'10px 24px 24px'}}>
+          <div style={{display:'flex', gap:12, alignItems:'center', background:'var(--cream)', borderRadius:14, padding:12, marginBottom:18}}>
+            <img src={product.image} alt={product.name} style={{width:54, height:54, borderRadius:10, objectFit:'cover', flexShrink:0}} />
+            <div style={{flex:1, minWidth:0}}>
+              <div style={{fontWeight:700, fontSize:14}}>{product.name}{qty>1 ? ` × ${qty}` : ''}</div>
+              <div style={{fontWeight:800, color:'var(--plum)', fontSize:15, marginTop:2}}>{total} ج.م</div>
             </div>
           </div>
 
-          <div style={{display:'grid', gap:14}}>
+          <div style={{display:'grid', gap:13}}>
             <div>
-              <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>الاسم بالكامل</label>
-              <input className="input-field" value={form.name} onChange={e=>update('name', e.target.value)} placeholder="مثال: مريم أحمد" />
+              <input className="input-field" value={form.name} onChange={e=>update('name', e.target.value)} placeholder="الاسم بالكامل" autoFocus />
               {errors.name && <p style={{color:'#B53A3A', fontSize:12, marginTop:4}}>{errors.name}</p>}
             </div>
             <div>
-              <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>رقم التليفون</label>
-              <input className="input-field" value={form.phone} onChange={e=>update('phone', e.target.value)} placeholder="01XXXXXXXXX" type="tel" />
+              <input className="input-field" value={form.phone} onChange={e=>update('phone', e.target.value)} placeholder="رقم التليفون (01XXXXXXXXX)" type="tel" />
               {errors.phone && <p style={{color:'#B53A3A', fontSize:12, marginTop:4}}>{errors.phone}</p>}
             </div>
-            <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:12}}>
-              <div>
-                <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>المحافظة</label>
-                <input className="input-field" value={form.city} onChange={e=>update('city', e.target.value)} placeholder="مثال: الجيزة" />
-                {errors.city && <p style={{color:'#B53A3A', fontSize:12, marginTop:4}}>{errors.city}</p>}
-              </div>
-              <div>
-                <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>طريقة الدفع</label>
-                <select className="input-field" value={form.payment} onChange={e=>update('payment', e.target.value)}>
-                  <option value="cod">دفع عند الاستلام (كاش)</option>
-                  <option value="instapay">إنستاباي</option>
-                </select>
-              </div>
-            </div>
             <div>
-              <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>العنوان بالتفصيل</label>
-              <input className="input-field" value={form.address} onChange={e=>update('address', e.target.value)} placeholder="الحي، الشارع، رقم العمارة..." />
+              <input className="input-field" value={form.address} onChange={e=>update('address', e.target.value)} placeholder="العنوان بالتفصيل (المحافظة، الحي، الشارع)" />
               {errors.address && <p style={{color:'#B53A3A', fontSize:12, marginTop:4}}>{errors.address}</p>}
             </div>
-            <div>
-              <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>طريقة التغليف المفضّلة</label>
-              <select className="input-field" value={form.packaging} onChange={e=>update('packaging', e.target.value)}>
-                {Object.entries(PACKAGING_LABELS).map(([k,l])=> <option key={k} value={k}>{l}</option>)}
-              </select>
-            </div>
-            <div>
-              <label style={{fontSize:13, fontWeight:700, display:'block', marginBottom:6}}>ملاحظات على الطلب</label>
-              <textarea className="input-field" rows={3} value={form.notes} onChange={e=>update('notes', e.target.value)} placeholder="مثال: عاوزة الأوردر في علبة هدية، أو أي طلب خاص..."></textarea>
-            </div>
+            <select className="input-field" value={form.payment} onChange={e=>update('payment', e.target.value)}>
+              <option value="cod">الدفع عند الاستلام (كاش)</option>
+              <option value="instapay">إنستاباي</option>
+            </select>
+
+            {showNotes ? (
+              <textarea className="input-field" rows={2} autoFocus value={form.notes} onChange={e=>update('notes', e.target.value)} placeholder="مثال: عاوزة الأوردر في علبة هدية..."></textarea>
+            ) : (
+              <button type="button" onClick={()=>setShowNotes(true)} style={{background:'none', border:'none', color:'var(--plum)', fontSize:13, fontWeight:600, textAlign:'right', padding:0, display:'flex', alignItems:'center', gap:5}}>
+                <Icon name="plus" size={13} /> إضافة ملاحظة على الطلب (اختياري)
+              </button>
+            )}
           </div>
 
           {errors.general && <p style={{color:'#B53A3A', fontSize:13, marginTop:10}}>{errors.general}</p>}
 
           <button type="submit" className="btn-primary" style={{width:'100%', marginTop:20, display:'flex', alignItems:'center', justifyContent:'center', gap:8}} disabled={submitting}>
-            {submitting ? <React.Fragment key="submitting">جاري تأكيد الحجز...</React.Fragment> : <React.Fragment key="idle"><Icon name="check" size={17} /> تأكيد الحجز</React.Fragment>}
+            {submitting ? <React.Fragment key="submitting">جاري تأكيد الطلب...</React.Fragment> : <React.Fragment key="idle"><Icon name="zap" size={17} /> تأكيد الطلب</React.Fragment>}
           </button>
           <p style={{fontSize:12, color:'var(--ink-soft)', textAlign:'center', marginTop:10}}>سيتم التواصل معك لتأكيد الطلب على رقمك المسجل</p>
         </form>
